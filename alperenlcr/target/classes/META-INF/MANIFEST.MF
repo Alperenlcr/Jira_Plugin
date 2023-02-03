@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Atlassian-Build-Date: 2023-02-03T14:02:29+0300
+Atlassian-Plugin-Key: Turkcell_Staj.alperenlcr
+Bnd-LastModified: 1675422150320
+Build-Jdk: 1.8.0_352
+Built-By: alperenlcr
+Bundle-Description: This is the Turkcell_Staj:alperenlcr plugin for Atla
+ ssian JIRA.
+Bundle-DocURL: http://Turkcell_Staj.alperenlcr/
+Bundle-ManifestVersion: 2
+Bundle-Name: alperenlcr
+Bundle-SymbolicName: Turkcell_Staj.alperenlcr
+Bundle-Vendor: Turkcell
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: Turkcell_Staj.alperenlcr.api;version="1.0.0"
+Import-Package: org.eclipse.gemini.blueprint.context;resolution:=optiona
+ l,org.eclipse.gemini.blueprint.service.exporter;resolution:=optional,or
+ g.eclipse.gemini.blueprint.service.exporter.support;resolution:=optiona
+ l,org.eclipse.gemini.blueprint.service.importer.support;resolution:=opt
+ ional,Turkcell_Staj.alperenlcr.api;version="[1.0,2)",com.atlassian.anno
+ tations.nonnull,com.atlassian.plugin,com.atlassian.plugin.module,com.at
+ lassian.plugin.osgi.external,com.atlassian.sal.api,javax.annotation,org
+ .osgi.framework,org.slf4j,org.springframework.beans,org.springframework
+ .beans.factory,org.springframework.beans.factory.config,org.springframe
+ work.cglib.core,org.springframework.cglib.proxy,org.springframework.cgl
+ ib.reflect,org.springframework.context,org.springframework.context.anno
+ tation,org.springframework.core.type
+Originally-Created-By: Apache Maven Bundle Plugin
+Spring-Context: *
+Tool: Bnd-3.5.0.201709291849
