@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="myPlugin"/>  
+  <!-- add our web resources -->  
+  <web-resource key="myPlugin-resources" name="myPlugin Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="myPlugin.css" location="/css/myPlugin.css"/>  
+    <resource type="download" name="myPlugin.js" location="/js/myPlugin.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>myPlugin</context> 
+  </web-resource>  
+
+
+
+
+
+
+<!-- 
+  atl.header: Adds the panel to the top of the Jira interface, near the main navigation.
+  atl.dashboard.tools: Adds the panel to the dashboard tools menu, which is accessible from the dashboard.
+  jira.issue.tools: Adds the panel to the issue tools menu, which is accessible from the issue view.
+  jira.issue.right.context: Adds the panel to the right-side context area of the issue view.
+  jira.project.summary: Adds the panel to the project summary page.
+  jira.view.issue.left: Adds the panel to the left-side area of the issue view.
+  jira.admin.plugins: Adds the panel to the Jira administration area.
+-->
+
+
+  <web-panel key="myPanel1" location="atl.header">
+    <resource name="view" type="static" location="input.html"/>
+  </web-panel>
+
+  <web-panel key="myPanel2" location="atl.dashboard.tools">
+    <resource name="view" type="static"><![CDATA[<b>2Hello World!</b>]]></resource>
+  </web-panel>
+
+  <web-panel key="myPanel3" location="jira.issue.tools">
+    <resource name="view" type="static"><![CDATA[<b>3Hello World!</b>]]></resource>
+  </web-panel>
+
+  <web-panel key="myPanel4" location="jira.issue.right.context">
+    <resource name="view" type="static"><![CDATA[<b>4Hello World!</b>]]></resource>
+  </web-panel>
+
+  <web-panel key="myPanel5" location="jira.project.summary">
+    <resource name="view" type="static"><![CDATA[<b>5Hello World!</b>]]></resource>
+  </web-panel>
+
+  <web-panel key="myPanel6" location="jira.project.summary">
+    <resource name="view" type="static"><![CDATA[<b>6Hello World!</b>]]></resource>
+  </web-panel>
+
+  <web-panel key="myPanel7" location="jira.admin.plugins">
+    <resource name="view" type="static"><![CDATA[<b>7Hello World!</b>]]></resource>
+  </web-panel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!---->
+  <web-section name="mySection" i18n-name-key="my-section.name" key="my-section" location="my-item-link" weight="1000"> 
+    <description key="my-section.description">The mySection Plugin</description>  
+    <label key="my-section.label"/> 
+  </web-section>  
+  <web-item name="myItem" i18n-name-key="my-item.name" key="my-item" section="system.top.navigation.bar" weight="1000"> 
+    <description key="my-item.description">The myItem Plugin</description>  
+    <label key="my-item.label"/>  
+    <link linkId="my-item-link"/> 
+  </web-item>  
+  <web-item name="Github" i18n-name-key="github.name" key="github" section="my-item-link/my-section" weight="1000"> 
+    <description key="github.description">The Github Plugin</description>  
+    <label key="github.label"></label>  
+    <link linkId="github-link">https://github.com/Alperenlcr</link> 
+  </web-item>
+</atlassian-plugin>

@@ -1,0 +1,41 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="myPlugin"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="myPlugin-resources" name="myPlugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="myPlugin.css" location="/css/myPlugin.css"/>
+        <resource type="download" name="myPlugin.js" location="/js/myPlugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>myPlugin</context>
+<web-panel name="example-header-web-panel" key="example-header-web-panel" location="atl.header" weight="100">
+  <description>This is an example web panel that will be displayed in the Jira header.</description>
+  <context-provider class="com.example.HeaderWebPanelContextProvider"/>
+  <resource name="view" type="velocity" location="/templates/header-web-panel.vm"/>
+</web-panel>
+
+    <!--issue right panel-->
+    <web-panel key="test24" name="test24" location="atl.jira.view.issue.right.context">
+        <label key="Custom Issue Panel"/>
+        <resource name="view" type="static"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/xPQmSQKOqHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></resource>
+    </web-panel>
+    <!---->
+	<web-panel key="myPanel2" location="atl.dashboard.tools">
+		<resource name="view" type="static">
+		<![CDATA[ <b>2Hello World!</b> ]]>
+		</resource>
+	</web-panel>
+    </web-resource>
+
+</atlassian-plugin>

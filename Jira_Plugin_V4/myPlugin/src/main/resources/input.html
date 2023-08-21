@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>
+      Enter an integer: 
+      <input type="number" id="num" name="num" />
+    </form>
+    
+    <button onclick="displayInteger()">Display Integer</button>
+
+    <p id="output"></p>
+    
+    <script>
+      function displayInteger() {
+        let num = document.getElementById("num").value;
+        document.getElementById("output").innerHTML = "Input integer is: " + num;
+      }
+    </script>
+  </body>
+</html>
+

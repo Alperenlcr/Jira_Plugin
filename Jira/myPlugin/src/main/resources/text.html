@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Input Display</title>
+      <style>
+        /*CSS Styles*/
+      </style> 
+    </head>
+    <body>
+      <label>Enter Your Input:</label>
+      <input type="text" id="input" />
+      <button onclick="showInput()">Show</button>
+      <div id="display">Input will be shown here</div>
+
+      <table id="myTable">
+        <thead>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </thead>
+        <tbody>
+          <script>
+let data_structure = [
+  [1, "John", "Doe", "JohnDoe@gmail.com"],
+  [3, "Barry", "Allen", "flash@gmail.com"],
+  [4, "Barry", "Allen", "flash@gmail.com"],
+  [11, "Barry", "Allen6", "flash@gmail.com"],
+  [12, "Barry", "Allen6", "flash@gmail.com"],
+  [13, "Barry", "Allen6", "flash@gmail.com"],
+  [14, "Barry", "Allen6", "flash@gmail.com"],
+  [17, "Barry", "Allen6", "flash@gmail.com"],
+  [18, "Barry", "Allen6", "flash@gmail.com"],
+  [19, "Barry", "Allen6", "flash@gmail.com"],
+  [21, "Barry", "Allen6", "flash@gmail.com"],
+  [23, "Alperen", "Olcer", "alperenlcr@gmail.com"]
+];
+
+//Create the html table with for loop
+let table = "<table style='border: 1px solid black;'>";
+table += "<tr style='border: 1px solid black;'>"; 
+table += "<th style='border: 1px solid black;'>ID</th>";
+table += "<th style='border: 1px solid black;'>First Name</th>";
+table += "<th style='border: 1px solid black;'>Last Name</th>";
+table += "<th style='border: 1px solid black;'>Email</th>";
+table += "</tr>"; 
+for(let i = 0; i < data_structure.length; i++) {
+  table += "<tr style='border: 1px solid black;'>"; 
+  table += "<td style='border: 1px solid black;'>" + data_structure[i][0] + "</td>";
+  table += "<td style='border: 1px solid black;'>" + data_structure[i][1] + "</td>";
+  table += "<td style='border: 1px solid black;'>" + data_structure[i][2] + "</td>";
+  table += "<td style='border: 1px solid black;'>" + data_structure[i][3] + "</td>";
+  table += "</tr>"; 
+}
+table += "</table>";
+
+document.getElementById("myTable").innerHTML = table;
+
+          </script>
+        </tbody>
+      </table>
+      
+      <script>
+        //Create the matrix and assign values
+
+        function showInput(){
+          let inputValue=document.getElementById('input').value;
+          document.getElementById('display').innerHTML = inputValue;
+        }
+const { Client } = require('pg');
+
+const client = new Client({
+  host: 'localhost',
+  database: 'Jira_Plugin_DB',
+  user: 'postgres',
+  password: '1234',
+  port: 5432
+});
+  
+client.connect();
+const queryString = 'SELECT * FROM contacts;';
+
+client.query(queryString, (err, res) => {
+  if (err) {
+    console.log(err);
+  }
+  
+  console.log(res.rows);
+});
+
+
+      </script>
+
+
+
+    </body>
+
+
+  </html>
